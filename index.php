@@ -4,7 +4,7 @@ $programName = "Telegram.exe";
 function isProgramRunning($programName)
 {
     $output = shell_exec("tasklist /FI \"IMAGENAME eq $programName\"");
-    return strpos($output, $programName) !== false;
+    return strpos($output, needle: $programName) !== false;
 }
 
 $running = isProgramRunning($programName);
@@ -16,15 +16,19 @@ $running = isProgramRunning($programName);
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مراقب Print Request</title>
+    <title>
+        مراقب برنامج الطباعة
+    </title>
     <link rel="stylesheet" href="public/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font.css">
+    <link rel="shortcut icon" href="public/print-icon.png" type="image/x-icon">
 
 
 </head>
 
 <body>
+    <!-- floating icons Effect  -->
     <div class="floating-icons">
         <i class="fas fa-print floating-icon" style="left: 10%; animation-delay: 0s;  "></i>
         <i class="fas fa-print floating-icon" style="left: 15%; animation-delay: 2s;  "></i>
@@ -45,6 +49,7 @@ $running = isProgramRunning($programName);
     </div>
 
 
+    <!-- Theme Toggle For Dark Mode , Lightmode -->
     <button class="theme-toggle" onclick="toggleTheme()">
         <i class="fas fa-moon" id="theme-icon"></i>
     </button>
